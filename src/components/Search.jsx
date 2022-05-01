@@ -1,48 +1,34 @@
-import React,{useState} from 'react';
+import React,{useRef} from 'react';
 import { connect } from 'react-redux';
 import {SearchInput} from '../actions/actions';
-import {useInitialState} from '../hooks/useInitialState';
 
 
 
 
 const Search = (props) => {
-    const {game} = props;
-    const [form,setForm] = useState({
-        gameName:'',
-    });
+    const inputRef = useRef();
     
-    
-    const date = useInitialState(game);
-    
+    const FetchData = async () => {
+        await fetch(`https://api.rawg.io/api/games?key=e8715360d08f430abab063d824de93db&page=1&page_size=20&search_precise=true&search=${inputRef.current.value}`)
+        .then(response => response.json())
+        .then(data => props.SearchInput(data.results))
+    }
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        SearchInput(form.gameName)
+        FetchData();
+
         
     }
     
-    const handleSearch = (event) => {
-        setForm({
-            ...form,
-            [event.target.name]:event.target.value
-        })
-        
-    }
     
-
-
     return(
         <div className="Search"> 
             <h1>Buscador</h1>
             <form onSubmit={handleSubmit}> 
-                <input type="text" placeholder="Teclee el juego a buscar" name="game" onChange={handleSearch}/>
+                <input type="text" placeholder="Teclee el juego a buscar" ref={inputRef}/>
                 <input type="submit" />
                
-               {date.length > 0 &&
-                    console.log(date.name)
-
-               }
             </form>
         </div>
     )
@@ -55,12 +41,4 @@ const mapDispatchToProps = {
     
 }
 
-const mapStateToProps = (state) => {
-    return {
-        game:state.game,
-        
-    }
-}
-
-
-export default connect(mapStateToProps,mapDispatchToProps)(Search);
+export default connect(null,mapDispatchToProps)(Search);

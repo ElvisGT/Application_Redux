@@ -10,7 +10,7 @@ import '../static/css/styles.css';
 
 const Layout = ({children}) => {
     const initialState = {
-        "game":{},
+        "game":[],
         "show_menu":false,
     }
 
