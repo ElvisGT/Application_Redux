@@ -69,3 +69,11 @@ body {
     height: 2rem;
     border-radius: 100%;
 }
+.Search {
+    min-height: calc(100vh - 10rem - 10rem);
+}
+
+.Footer {
+    background-color: orange;
+    height: 15rem;
+}

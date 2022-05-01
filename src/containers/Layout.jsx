@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home} from '../containers/Home';
+import {Footer} from '../components/Footer';
 import Header from '../components/Header';
 import {useInitialState} from '../hooks/useInitialState';
 import {Provider} from 'react-redux';
@@ -22,6 +22,7 @@ const Layout = ({children}) => {
         <Provider store={store}>
             <Header />
             {children}
+            <Footer />
         </Provider>
     )
 }
