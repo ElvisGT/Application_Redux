@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.Header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    height: 10rem;
+    background-color: orange;
+}
+
+.Header-title {
+    margin-top: 3.5rem;
+    font-size: 2.5rem;
+    letter-spacing: .1rem;
+}
+
+.Header-menu {
+    position: absolute;
+    right: -12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 12rem;
+    height: 16rem;
+    background-color: aqua;
+    opacity: 0.9;
+
+    animation-name: menu;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    transition: .6s;
+    
+}
+
+@keyframes menu {
+    from {
+        right: -2rem;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+
+
+    }
+}
+
+.Header-menu-closeButton{
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
