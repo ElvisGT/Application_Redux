@@ -6,6 +6,15 @@ const reducer = (state,action) => {
                 show_menu:!state.show_menu
             }
         
+        case 'SEARCH_INPUT':
+            return {
+                ...state,
+                game:action.payload
+                
+            }
+        
+        
+        
         default:
             return state;
     }

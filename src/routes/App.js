@@ -2,7 +2,7 @@ import React from 'react';
 import {HashRouter,Routes,Route} from 'react-router-dom';
 import { Layout } from '../containers/Layout';
 import {Home} from '../containers/Home';
-import {Search} from '../components/Search';
+import Search from '../components/Search';
 
 const App = () => {
     return (
