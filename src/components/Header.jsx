@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {ShowMenu} from '../actions/actions';
 
@@ -11,10 +11,13 @@ const Header = (props) => {
         window.onscroll = () => {
             const scroll = document.documentElement.scrollTop || document.body.scrollTop;
 
-            if(scroll > 150){
+            if(scroll > 200){
                 setMenuScroll(true);
+
+
             }else{
                 setMenuScroll(false);
+
             }
         }
     }, [])
@@ -23,31 +26,37 @@ const Header = (props) => {
         props.ShowMenu();
     }
 
+    const handleClear = () => {
+        document.documentElement.scrollTop = 0;
+    }
+
     return (
         <div className="Header" id="header">
             <h1 className="Header-title">ElvisDev</h1>
             {show_menu
                 ? 
                     <div className="Header-menu">
-                        <button type="button" 
-                                className="Header-menu-closeButton"
+                        <span 
                                 onClick={handleMenu}>
-                                <img />
-                        </button>
-                        <a href="/">Inicio</a>
-                        <a href="/">Buscador</a>
-                        <a href="/">Acerca</a>
+                                <img className="Header-menu-closeButton-img" src="https://i.ibb.co/Y8P59Ch/icons8-eliminar-32.png" alt="boton de cerrar"/>
+                        </span>
+                        <Link class="menu-link" to="/">Inicio</Link>
+                        <Link class="menu-link" to="/buscador">Buscador</Link>
+                        <Link class="menu-link" to="/acerca">Acerca</Link>
                     </div>
                 :
-                    <button type="button" 
-                            className="Header-menu-closeButton" 
+                    <span   
                             onClick={handleMenu}>
-                            <img />
-                    </button>
+                            <img className="Header-menu-img" src="https://i.ibb.co/jwSRwmM/icons8-men-32.png" alt="icono de menu"/>
+                    </span>
             }
 
             {menuScroll && 
-                <div className="Header-menu-scroll">Menu Scroll</div>
+                <div className="Header-menu-scroll">
+                        <Link onClick={handleClear} class="menu-link" to="/">Inicio</Link>
+                        <Link onClick={handleClear} class="menu-link" to="/buscador">Buscador</Link>
+                        <Link onClick={handleClear} class="menu-link" to="/acerca">Acerca</Link>
+                </div>
             }
 
            
