@@ -43,9 +43,9 @@ const Header = (props) => {
                                 onClick={handleMenu}>
                                 <img className="Header-menu-closeButton-img" src="https://i.ibb.co/Y8P59Ch/icons8-eliminar-32.png" alt="boton de cerrar"/>
                         </span>
-                        <Link onClick={handleClear} class="menu-link" to="/">Inicio</Link>
-                        <Link onClick={handleClear} class="menu-link" to="/buscador">Buscador</Link>
-                        <Link onClick={handleClear} class="menu-link" to="/acerca">Acerca</Link>
+                        <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
+                        <Link onClick={handleClear} className="menu-link" to="/buscador">Buscador</Link>
+                        <Link onClick={handleClear} className="menu-link" to="/acerca">Acerca</Link>
                     </div>
                 :
                     <span   
@@ -56,9 +56,9 @@ const Header = (props) => {
 
             {menuScroll && 
                 <div className="Header-menu-scroll">
-                        <Link onClick={handleClear} class="menu-link" to="/">Inicio</Link>
-                        <Link onClick={handleClear} class="menu-link" to="/buscador">Buscador</Link>
-                        <Link onClick={handleClear} class="menu-link" to="/acerca">Acerca</Link>
+                        <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
+                        <Link onClick={handleClear} className="menu-link" to="/buscador">Buscador</Link>
+                        <Link onClick={handleClear} className="menu-link" to="/acerca">Acerca</Link>
                 </div>
             }
 
