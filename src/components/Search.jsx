@@ -22,7 +22,7 @@ const Search = (props) => {
     return(
         <div className="Search"> 
             <h1 className="Search-title">Buscador</h1>
-            <form class="Search-form" onSubmit={handleSubmit}> 
+            <form className="Search-form" onSubmit={handleSubmit}> 
                 <input className="Search-input" type="text" placeholder="Teclee el juego a buscar" ref={inputRef} maxLength="30" />
                 <input className="Search-submit" type="submit" value="Buscar" />
                
