@@ -28,6 +28,9 @@ const Header = (props) => {
 
     const handleClear = () => {
         document.documentElement.scrollTop = 0;
+        props.ShowMenu();
+
+
     }
 
     return (
@@ -40,9 +43,9 @@ const Header = (props) => {
                                 onClick={handleMenu}>
                                 <img className="Header-menu-closeButton-img" src="https://i.ibb.co/Y8P59Ch/icons8-eliminar-32.png" alt="boton de cerrar"/>
                         </span>
-                        <Link class="menu-link" to="/">Inicio</Link>
-                        <Link class="menu-link" to="/buscador">Buscador</Link>
-                        <Link class="menu-link" to="/acerca">Acerca</Link>
+                        <Link onClick={handleClear} class="menu-link" to="/">Inicio</Link>
+                        <Link onClick={handleClear} class="menu-link" to="/buscador">Buscador</Link>
+                        <Link onClick={handleClear} class="menu-link" to="/acerca">Acerca</Link>
                     </div>
                 :
                     <span   
