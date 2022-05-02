@@ -17,22 +17,18 @@ const Search = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         FetchData();
-
-        
     }
-    
     
     return(
         <div className="Search"> 
-            <h1>Buscador</h1>
-            <form onSubmit={handleSubmit}> 
-                <input type="text" placeholder="Teclee el juego a buscar" ref={inputRef}/>
-                <input type="submit" />
+            <h1 className="Search-title">Buscador</h1>
+            <form class="Search-form" onSubmit={handleSubmit}> 
+                <input className="Search-input" type="text" placeholder="Teclee el juego a buscar" ref={inputRef} maxLength="30" />
+                <input className="Search-submit" type="submit" value="Buscar" />
                
             </form>
         </div>
     )
-
 
 }
 
