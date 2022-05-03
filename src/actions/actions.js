@@ -3,6 +3,11 @@ export const ShowMenu = (payload) => ({
     payload
 });
 
+export const HideMenu = (payload) => ({
+    type:'HIDE_MENU',
+    payload
+});
+
 export const SearchInput = (payload) => ({
     type:'SEARCH_INPUT',
     payload

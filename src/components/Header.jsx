@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {ShowMenu} from '../actions/actions';
+import {ShowMenu,HideMenu} from '../actions/actions';
 
 const Header = (props) => {
     const {show_menu} = props;
@@ -13,6 +13,7 @@ const Header = (props) => {
 
             if(scroll > 200){
                 setMenuScroll(true);
+                props.HideMenu();
 
 
             }else{
@@ -22,14 +23,17 @@ const Header = (props) => {
         }
     }, [])
 
-    const handleMenu = () => {
+    const handleShowMenu = () => {
         props.ShowMenu();
+    }
+
+    const handleHideMenu = () => {
+        props.HideMenu();
     }
 
     const handleClear = () => {
         document.documentElement.scrollTop = 0;
-        props.ShowMenu();
-
+        props.HideMenu();
 
     }
 
@@ -40,7 +44,7 @@ const Header = (props) => {
                 ? 
                     <div className="Header-menu">
                         <span 
-                                onClick={handleMenu}>
+                                onClick={handleHideMenu}>
                                 <img className="Header-menu-closeButton-img" src="https://i.ibb.co/Y8P59Ch/icons8-eliminar-32.png" alt="boton de cerrar"/>
                         </span>
                         <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
@@ -49,7 +53,7 @@ const Header = (props) => {
                     </div>
                 :
                     <span   
-                            onClick={handleMenu}>
+                            onClick={handleShowMenu}>
                             <img className="Header-menu-img" src="https://i.ibb.co/jwSRwmM/icons8-men-32.png" alt="icono de menu"/>
                     </span>
             }
@@ -74,7 +78,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    ShowMenu
+    ShowMenu,
+    HideMenu
 }
 
 
