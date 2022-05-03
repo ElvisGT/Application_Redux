@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 const View = ({game}) => {
     return (
-        <React.Fragment>
+        <div className="View">
         {game.length > 0 &&
             game.map(item => (
             <p key={item.name}>{item.name}</p>
@@ -11,7 +11,7 @@ const View = ({game}) => {
             ))}
             
         
-        </React.Fragment>
+        </div>
     );
 }
 

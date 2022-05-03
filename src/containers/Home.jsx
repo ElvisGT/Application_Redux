@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Home = () => {
     return (
         <div className="Home">
-            <img className="Home-img" src="" alt="" />
+            <img className="Home-img" src="https://i.ibb.co/swpKjTq/gtaV-1.png" alt="Logo de GTAVnpm" />
                 <div className="Home-information">
                      <p className="Home-information-p">
                         Bienvenid@ a mi sitio web donde la temática principal
