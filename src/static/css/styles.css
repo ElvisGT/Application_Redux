@@ -183,7 +183,7 @@ body {
 }
 
 .Home-img {
-    min-height: 22rem;
+    min-height: 20rem;
     object-fit: contain;
 }
 
@@ -200,7 +200,23 @@ body {
     font-weight: 500;
     line-height: 2.1rem;
     text-align: center;
+    color: var(--black);
 }
+
+.Home-information-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 3rem;
+    margin-top: 1rem;
+    background-color: var(--menu);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 1.5rem;
+    transition: .5s;
+}
+
 
 .Footer {
     display: grid;
