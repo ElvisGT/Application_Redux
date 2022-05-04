@@ -7,58 +7,87 @@ const View = (props) => {
 
     const handleMore = card => {
         props.MoreDetails(card);
-    }
+    };
 
     const handleLess = () => {
         props.LessDetails();
-    }
+    };
 
     return (
         <div className="View">
-                {game.length > 0 &&
-                    game.map(item => (
-                        <div className="View-card" key={item.name}>
-                            <img className="View-card-img" src={item.background_image}/>
-                                <div className="View-card-description">
-                                    <p className="View-card-name">{item.name}</p>
-                                    <p className="View-card-released">{item.released}</p>
-                                    {details.length === 0 
-                                        ?
-                                            <img className="View-card-more" 
-                                                src="https://i.ibb.co/Y8P59Ch/icons8-eliminar-32.png"
-                                                onClick={() => handleMore(item)}     
-                                            />
-                                        :
-                                            <img className="View-card-more" 
-                                            src="https://i.ibb.co/Y8P59Ch/icons8-eliminar-32.png"
-                                            onClick={() => handleLess(item)}     
-                                    />
-                                    }
-                                </div>
-                                {details.length > 0 &&
-                                    details.map(detail => (
-                                       item.released === detail.released &&
-                                       <div key={item.name}>
-                                           <h1>{detail.name}</h1>
-                                       </div> 
-                                ))}
-                        </div>  
-                    ))}
+        {game.length > 0 &&
+            game.map(item => (
+                <div className="View-card" key={item.name}>
+                    <img className="View-card-img" src={item.background_image}/>
+                        <div className="View-card-description">
+                            <p className="View-card-name">{item.name}</p>
+                            <p className="View-card-released">{item.released}</p>
+                                
+                            <img className="View-card-more" 
+                                    src="https://i.ibb.co/mzLTDGz/icons8-m-s-30.png"
+                                    onClick={() => handleMore(item)}     
+                            /> 
+                            
+                        </div>
+                        {details.length > 0 &&
+                            details.map(detail => (
+                                item.released === detail.released &&
+                                <React.Fragment  key={detail.name}>
+                                        <img className="View-card-less" 
+                                        src="https://i.ibb.co/6YpJyn9/icons8-menos-30.png"
+                                        onClick={() => handleLess()}     
+                                        />
+                                <div className="View-more-details">
+                                        <h2 className="View-more-details-metacritic-title">
+                                            Metacritic: 
+                                        </h2>
+                                        <p className="View-more-details-metacritic-p">
+                                            {item.metacritic}
+                                        </p>
+                                        <h2 className="View-more-details-platform-title">
+                                            Plataformas:
+                                        </h2>
+                                        <div className="View-more-details-platform">
+                                        {item.platforms.map(platform => (
+                                                <p className="View-more-details-platform-p" 
+                                                    key={platform.platform.id}>
+                                                    
+                                                    {platform.platform.name}
+                                                
+                                                </p>
+                                            
+                                            ))}
+                                        </div>
+                                        <h2 className="View-more-details-screenshots-title">Screenshots:</h2>
+                                        <div className="View-more-details-screenshots-container">
+                                            {item.short_screenshots.map(screenshot => (
+                                                <img src={screenshot.image}
+                                                        key={screenshot.id}
+                                                        className="View-more-details-screenShots-img"
+                                                />
+                                                ))}
+                                        </div>
+                    
+                            </div>
+                                </React.Fragment> 
+                        ))}
+                </div>  
+            ))}
         </div>
     );
-}
+};
 
 const mapStateToProps = (state) => {
     return {
         game:state.game,
         details:state.details
     }
-}
+};
 
 const mapDispatchToProps = {
     MoreDetails,
     LessDetails
-}
+};
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(View);

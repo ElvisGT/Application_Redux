@@ -99,6 +99,8 @@ body {
     height: 4rem;
     background-color: var(--principal);
     box-shadow: 0 .2rem .6rem .2rem rgba(0,0,0,0.4);
+    z-index: 2;
+
 
     animation: menuScroll .5s linear forwards;
 
@@ -258,10 +260,14 @@ body {
 }
 
 .View-card {
+    position: relative;
     width: 30rem;
     min-height: 28rem;
     margin: 0 auto 5rem;
     outline: .2rem solid var(--menu);
+    border-radius: 2rem;
+    z-index: 1;
+    
 }
 
 .View-card-img{
@@ -269,6 +275,8 @@ body {
     height: 20rem;
     object-fit: cover;
     border-bottom: .3rem solid var(--menu);
+    border-radius: 2rem;
+
 }
 
 .View-card-description {
@@ -278,7 +286,6 @@ body {
     justify-items: center;
     align-items: center;
     min-height: 10rem;
-    margin-top: -0.5rem;
 }
 
 .View-card-name {
@@ -298,4 +305,65 @@ body {
 .View-card-more {
     grid-column: 3;
     grid-row: 2;
+}
+
+.View-card-less {
+    position: relative;
+    left: 23.5rem;
+    top: -4rem;
+    background-color: var(--body);
+}
+
+.View-more-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(8rem,15rem)) ;
+    grid-template-rows: repeat(auto-fill,minmax(2rem,10rem));
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: -2rem;
+    border-top: .2rem solid var(--menu);
+}
+
+.View-more-details-metacritic-title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.View-more-details-metacritic-p{
+    grid-column: 2/4;
+}
+
+.View-more-details-platform-title {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-left: 2.8rem;
+}
+
+.View-more-details-platform {
+    grid-row: 2/3;
+    grid-column: 2/4;
+    font-style: italic;
+}
+.View-more-details-screenshots-title {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin-left: 2.8rem;
+
+}
+
+.View-more-details-screenshots-container{
+    grid-row: 4/5;
+    grid-column: 1/4;
+    margin: 0 auto;
+    width: 25rem;
+}
+
+.View-more-details-screenShots-img {
+    width: 25rem;
+    height: 20rem;
+    margin-bottom: .5rem;
+    object-fit: cover;
+    border: .5rem solid var(--menu);
+    border-radius: 2rem;
 }
