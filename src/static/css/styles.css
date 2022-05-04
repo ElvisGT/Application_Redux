@@ -361,7 +361,7 @@ body {
 
 .View-more-details-screenShots-img {
     width: 25rem;
-    height: 20rem;
+    height: 15rem;
     margin-bottom: .5rem;
     object-fit: cover;
     border: .5rem solid var(--menu);
