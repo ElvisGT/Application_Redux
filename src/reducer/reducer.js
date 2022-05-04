@@ -19,6 +19,18 @@ const reducer = (state,action) => {
                 
             }
         
+        case 'MORE_DETAILS':  
+            return {
+                ...state,
+                details:[action.payload]
+            
+        }
+
+        case 'LESS_DETAILS':
+            return {
+                ...state,
+                details:[]
+            }
         
         
         default:

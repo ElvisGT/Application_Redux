@@ -13,3 +13,11 @@ export const SearchInput = (payload) => ({
     payload
 });
 
+export const MoreDetails = (payload) => ({
+    type:'MORE_DETAILS',
+    payload
+})
+
+export const LessDetails = () => ({
+    type:'LESS_DETAILS',
+})

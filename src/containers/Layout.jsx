@@ -12,6 +12,7 @@ const Layout = ({children}) => {
     const initialState = {
         "game":[],
         "show_menu":false,
+        "details":[],
     }
 
     const store = createStore(reducer,initialState)
