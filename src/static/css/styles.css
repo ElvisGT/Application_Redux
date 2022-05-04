@@ -20,6 +20,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Dosis', sans-serif;
+    background-color: var(--body);
 }
 
 .Header {
@@ -367,4 +368,41 @@ body {
     object-fit: cover;
     border: .5rem solid var(--menu);
     border-radius: 2rem;
+}
+
+.Acerca {
+    min-height: calc(100vh - 10rem - 10rem);
+    background-color: var(--body);
+}
+
+.Acerca-container {
+    width: 30rem;
+    min-height: 15rem;
+    margin: 2rem 0 1rem 1rem;
+    border-left: .5rem solid var(--menu);
+}
+
+.Acerca-title {
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+    font-size: 2.3rem;
+
+}
+
+.Acerca-p {
+    margin-left: .5rem;
+    line-height: 2.3rem;
+    font-size: 1.8rem;
+}
+
+.Acerca-vinculo {
+    text-decoration: none;
+    color: var(--menu);
+    font-weight: bold;
+}
+
+.Thanks {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
