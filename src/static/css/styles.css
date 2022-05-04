@@ -266,6 +266,7 @@ body {
     margin: 0 auto 5rem;
     outline: .2rem solid var(--menu);
     border-radius: 2rem;
+    box-shadow: 0 .6rem 2rem .2rem rgba(0, 0, 0, 0.4);
     z-index: 1;
     
 }
