@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {ShowMenu,HideMenu,ShowDesktop} from '../actions/actions';
+import {ShowMenu,HideMenu,ShowDesktop,LessDetails} from '../actions/actions';
 
 const Header = (props) => {
     const {show_menu,show_desktop} = props;
@@ -55,6 +55,7 @@ const Header = (props) => {
     const handleClear = () => {
         document.documentElement.scrollTop = 0;
         props.HideMenu();
+        props.LessDetails();
 
     }
 
@@ -116,6 +117,7 @@ const mapDispatchToProps = {
     ShowMenu,
     HideMenu,
     ShowDesktop,
+    LessDetails
 }
 
 
