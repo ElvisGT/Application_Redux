@@ -17,13 +17,13 @@ const View = (props) => {
         <div className="View">
         {game.length > 0 &&
             game.map(item => (
-                <div className="View-card" key={item.name}>
+                <div className="View-card" key={item.name} id="card">
                     <img className="View-card-img" src={item.background_image}/>
                         <div className="View-card-description">
                             <p className="View-card-name">{item.name}</p>
                             <p className="View-card-released">{item.released}</p>
                                 
-                            <img className="View-card-more" 
+                            <img className="View-card-more-img" 
                                     src="https://i.ibb.co/mzLTDGz/icons8-m-s-30.png"
                                     onClick={() => handleMore(item)}     
                             /> 
@@ -32,12 +32,14 @@ const View = (props) => {
                         {details.length > 0 &&
                             details.map(detail => (
                                 item.released === detail.released &&
-                                <React.Fragment  key={detail.name}>
-                                        <img className="View-card-less" 
-                                        src="https://i.ibb.co/6YpJyn9/icons8-menos-30.png"
-                                        onClick={() => handleLess()}     
-                                        />
-                                <div className="View-more-details">
+                                <div className="View-card-details" key={detail.name}>
+                                        <div className="View-card-less-container">
+                                            <img className="View-card-less-img" 
+                                            src="https://i.ibb.co/6YpJyn9/icons8-menos-30.png"
+                                            onClick={() => handleLess()}     
+                                            />
+                                        </div>
+                                    <div className="View-more-details">
                                         <h2 className="View-more-details-metacritic-title">
                                             Metacritic: 
                                         </h2>
@@ -68,8 +70,8 @@ const View = (props) => {
                                                 ))}
                                         </div>
                     
-                            </div>
-                                </React.Fragment> 
+                                    </div>
+                                </div> 
                         ))}
                 </div>  
             ))}
