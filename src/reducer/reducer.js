@@ -32,6 +32,11 @@ const reducer = (state,action) => {
                 details:[]
             }
         
+        case 'SHOW_DESKTOP':
+            return {
+                ...state,
+                show_desktop:true,
+            }
         
         default:
             return state;

@@ -1,11 +1,16 @@
 import React,{useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {ShowMenu,HideMenu} from '../actions/actions';
+import {ShowMenu,HideMenu,ShowDesktop} from '../actions/actions';
 
 const Header = (props) => {
-    const {show_menu} = props;
+    const {show_menu,show_desktop} = props;
     const [menuScroll,setMenuScroll] = useState(false);
+    
+    if(window.screen.width >= 768){
+        props.ShowDesktop();
+    }
+   
 
     useEffect(() => {
         window.onscroll = () => {
@@ -20,7 +25,20 @@ const Header = (props) => {
                 setMenuScroll(false);
 
             }
-        }
+        };
+
+            window.onresize = () => {
+                const screenSize = window.screen.width;
+
+                if(screenSize >= 768){
+                    props.ShowDesktop();
+                }else if(screenSize < 768){
+                    props.HideDesktop();
+                }
+                
+               
+            };
+
     }, [])
 
     const handleShowMenu = () => {
@@ -40,8 +58,8 @@ const Header = (props) => {
     return (
         <div className="Header" id="header">
             <h1 className="Header-title">ElvisDev</h1>
-            {show_menu
-                ? 
+            {show_menu 
+                ?
                     <div className="Header-menu">
                         <span 
                                 onClick={handleHideMenu}>
@@ -50,12 +68,22 @@ const Header = (props) => {
                         <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
                         <Link onClick={handleClear} className="menu-link" to="/buscador">Buscador</Link>
                         <Link onClick={handleClear} className="menu-link" to="/acerca">Acerca</Link>
+                 
                     </div>
                 :
                     <span   
-                            onClick={handleShowMenu}>
-                            <img className="Header-menu-img" src="https://i.ibb.co/jwSRwmM/icons8-men-32.png" alt="icono de menu"/>
+                        onClick={handleShowMenu}>
+                        <img className="Header-menu-img" src="https://i.ibb.co/jwSRwmM/icons8-men-32.png" alt="icono de menu"/>
                     </span>
+            }
+            {show_desktop &&
+                <div className="Menu_Desktop">
+                    <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
+                    <Link onClick={handleClear} className="menu-link" to="/buscador">Buscador</Link>
+                    <Link onClick={handleClear} className="menu-link" to="/acerca">Acerca</Link>
+                 
+                </div>
+                
             }
 
             {menuScroll && 
@@ -73,13 +101,15 @@ const Header = (props) => {
 
 const mapStateToProps = state => {
     return {
-        show_menu:state.show_menu
+        show_menu:state.show_menu,
+        show_desktop:state.show_desktop,
     }
 }
 
 const mapDispatchToProps = {
     ShowMenu,
-    HideMenu
+    HideMenu,
+    ShowDesktop,
 }
 
 

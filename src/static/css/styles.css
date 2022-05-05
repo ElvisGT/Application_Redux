@@ -127,6 +127,16 @@ body {
     font-weight: bold;
 }
 
+.menu-link:hover {
+    color: red;
+    transition: .5s;
+}
+
+.Menu_Desktop{
+    display: none;
+}
+
+
 .Search {
     display: flex;
     flex-direction: column;
@@ -405,4 +415,21 @@ body {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
+}
+
+@media screen and (min-width:768px){
+    .Header-menu-img {
+        display: none;
+    }
+    .Menu_Desktop{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 50rem;
+        height: 10rem;
+    }
+    
 }
