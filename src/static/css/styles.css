@@ -388,7 +388,6 @@ body {
 
 .View-more-details-metacritic-p{
     grid-column: 2/4;
-    font-size: 1.8rem;
 }
 
 .View-more-details-platform-title {
@@ -402,15 +401,15 @@ body {
     grid-column: 2/4;
 }
 .View-more-details-platform-p{
+    margin-left: 1.2rem;
     font-style: italic;
-    font-size: 1.8rem;
     font-weight: 500;
     color:var(--black);
 }
 .View-more-details-screenshots-title {
     grid-column: 1/2;
     grid-row: 3/4;
-    margin-left: 2.8rem;
+    margin-left: 3.3rem;
 
 }
 
@@ -538,5 +537,9 @@ body {
         width: 60rem;
         min-height: 10rem;
         margin: 3rem auto;
+    }
+
+    .View-more-details-metacritic-p, .View-more-details-platform-p{
+        font-size: 1.8rem;
     }
 }

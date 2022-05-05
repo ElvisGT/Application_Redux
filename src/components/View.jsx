@@ -44,7 +44,12 @@ const View = (props) => {
                                             Metacritic: 
                                         </h2>
                                         <p className="View-more-details-metacritic-p">
-                                            {item.metacritic}
+                                            {item.metacritic 
+                                                ? 
+                                                    item.metacritic
+                                                :
+                                                    <p>No disponible</p>
+                                            }
                                         </p>
                                         <h2 className="View-more-details-platform-title">
                                             Plataformas:
