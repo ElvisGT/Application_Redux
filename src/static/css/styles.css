@@ -444,6 +444,7 @@ body {
         height: 10rem;
     }
 
+    
     .Home-img{
         width: 35rem;
         height: 30rem;
@@ -451,7 +452,7 @@ body {
 
     .Home-information{
         justify-content: center;
-        min-height: 16rem;
+        min-height: 15rem;
 
     }
 
@@ -459,6 +460,13 @@ body {
         width: 50rem;
     }
 
+    .Buscador {
+        min-height: calc(100vh - 10rem - 10rem);
+    }
+
+    .Search-input {
+        width: 50rem;
+    }
     
     
 }
