@@ -265,6 +265,11 @@ body {
     text-align: center;
     border-radius: .8rem;
 }
+
+.Footer-vinculo:hover {
+    color: var(--link_hover);
+}
+
 .Footer-right{
     grid-row: 2;
     grid-column: 1/4;
