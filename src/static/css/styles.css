@@ -4,6 +4,7 @@
     --white:#ffff;
     --menu:#184e77;
     --black:#212529;
+    --link_hover:gold;
 }
 
 
@@ -128,7 +129,7 @@ body {
 }
 
 .menu-link:hover {
-    color: red;
+    color: var(--link_hover);
     transition: .5s;
 }
 
@@ -234,6 +235,12 @@ body {
     border-radius: 1.5rem;
     transition: .5s;
 }
+
+.Home-information-link:hover {
+    color: var(--link_hover);
+    background-color: var(--principal);
+}
+
 
 
 .Footer {
@@ -431,5 +438,22 @@ body {
         width: 50rem;
         height: 10rem;
     }
+
+    .Home-img{
+        width: 35rem;
+        height: 30rem;
+    }
+
+    .Home-information{
+        justify-content: center;
+        min-height: 16rem;
+
+    }
+
+    .Home-information-p {
+        width: 50rem;
+    }
+
+    
     
 }

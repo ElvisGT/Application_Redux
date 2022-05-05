@@ -13,6 +13,8 @@ const Header = (props) => {
    
 
     useEffect(() => {
+
+        //Esto es para escuchar tdo el tiempo el scroll
         window.onscroll = () => {
             const scroll = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -27,6 +29,7 @@ const Header = (props) => {
             }
         };
 
+            //Esto es para escuchar todo el tiempo si se cambia de resolucion
             window.onresize = () => {
                 const screenSize = window.screen.width;
 
@@ -58,6 +61,7 @@ const Header = (props) => {
     return (
         <div className="Header" id="header">
             <h1 className="Header-title">ElvisDev</h1>
+            {/*Esto es para mostrar el menu o el icono del menu*/}
             {show_menu 
                 ?
                     <div className="Header-menu">
@@ -76,6 +80,7 @@ const Header = (props) => {
                         <img className="Header-menu-img" src="https://i.ibb.co/jwSRwmM/icons8-men-32.png" alt="icono de menu"/>
                     </span>
             }
+            {/*Esto es para mostrar el menu en modo desktop*/}
             {show_desktop &&
                 <div className="Menu_Desktop">
                     <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
@@ -86,6 +91,7 @@ const Header = (props) => {
                 
             }
 
+            {/*Esto es para mostrar el menu al hacer scroll*/}
             {menuScroll && 
                 <div className="Header-menu-scroll">
                         <Link onClick={handleClear} className="menu-link" to="/">Inicio</Link>
